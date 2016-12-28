@@ -69,7 +69,7 @@ class EasyPHP
             $this->config['db_username'],
             $this->config['db_password'],
             array(
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_EMULATE_PREPARES => false
         ));
 
