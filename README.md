@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/BinaryEvolved/EasyPHP-Kit.svg?branch=master)](https://travis-ci.org/BinaryEvolved/EasyPHP-Kit)
 #EasyPHP-Kit
 
 EasyPHP-Kit is a easy to implement PHP class designed to allow website developers to implement essential and common features into their website with little to no work. Don't understand how to protect against CSRF attacks? Not sure how to have a safe database session storage implementation? No problem! EasyPHP-Kit is as easy as dropping the EasyPHP-Kit file into your working directory, and including it in your PHP scripts. 
