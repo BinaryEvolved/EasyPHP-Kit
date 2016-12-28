@@ -72,6 +72,10 @@ class EasyPHP
 
     }
 
+    /**
+     * Generates a new PDO driver connection to database using configured connection information
+     * @return PDO PDO object
+     */
     private function buildDB()
     {
         return new PDO('mysql:host=localhost;'.
