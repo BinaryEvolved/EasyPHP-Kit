@@ -110,9 +110,12 @@ class EasyPHP
      */
     public function retrieveSettings($key)
     {
-        if (isset($this->settings[$key]))
+        if (isset($this->settings[$key]))//Check if key has an assigned value
              if (!$this->settings == null)
                 return $this->settings[$key];
         return false;
     }
 }
+
+$ezphp = new EasyPHP();
+echo $ezphp->retrieveSettings('test');
