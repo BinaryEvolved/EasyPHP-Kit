@@ -88,8 +88,7 @@ class EasyPHP
     {
         try {
             $settingsQuery = $this->db->prepare('SELECT * FROM `settings`;');
-            if (!$settingsQuery->execute())
-                die ("refreshSettings() failed on execution of PDO statement.");
+            $settingsQuery->execute();
             $settingsResults = $settingsQuery->fetchAll(PDO::FETCH_BOTH);
             $this->settings = null;
             $this->settings['SettingsTotal'] = $settingsQuery->rowCount();
