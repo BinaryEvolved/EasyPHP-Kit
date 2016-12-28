@@ -62,8 +62,19 @@ class EasyPHP
          * Begin Initialization
          */
 
-        //Construct new PDO driver for MySQL
-        $this->db = new PDO('mysql:host=localhost;'.
+        //Construct new PDO driver for MySQL interactions
+        $this->db = $this->buildDB();
+
+        //Populate settings array
+        if (!$this->refreshSettings())
+            die('Refresh Settings Failed @ Initialization');
+
+
+    }
+
+    private function buildDB()
+    {
+        return new PDO('mysql:host=localhost;'.
             'dbname='.$this->config['db_database'].
             ';charset=utf8mb4',
             $this->config['db_username'],
@@ -71,13 +82,7 @@ class EasyPHP
             array(
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_EMULATE_PREPARES => false
-        ));
-
-        //Populate settings array
-        if (!$this->refreshSettings())
-            die('Refresh Settings Failed @ Initialization');
-
-
+            ));
     }
 
     /**
